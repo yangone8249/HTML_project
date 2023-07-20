@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OZO | 즐거운 감동</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/ticketing.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="./js/top_button.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_content">
+            <h1>
+                <a href="./index.html">
+                    <img src="./img/logo.png" alt="">
+                    <span>MOVIEBOX</span>
+                </a>
+            </h1>
+            <ul>
+                <li>
+                    <a href="./loginPage.html">
+                        <img src="./img/loginPassword.png" alt=""> <br>
+                        <span>로그인</span>
+                    </a>
+                <li>
+                    <a href="./join.html">
+                        <img src="./img/loginJoin.png" alt=""> <br>
+                        <span>회원가입</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./loginPage.html">
+                        <img src="./img/loginMember.png" alt=""> <br>
+                        <span>내 정보</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/loginCustomer.png" alt=""> <br>
+                        <span>고객센터</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="nav">
+        <div id="nav_content">
+            <ul>
+                <li><a class="hover_color_red" href="#"></a> 영화</li>
+                <li><a class="hover_color_red" href="#"></a> 극장</li>
+                <li><a class="hover_color_red" href="./ticketing.html">예매</a></li>
+                <li><a class="hover_color_red" href="./store.html">스토어</a></li>
+                <li><a class="hover_color_red" href="./event_1.html">이벤트</a></li>
+                <li><a class="hover_color_red" href="./benefit.html">혜택</a></li>
+            </ul>
+            <div id="nav_search">
+                <input type="text">
+                <button type="button"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="section">
+        <div id="section_content">
+            <div id="section_nav">
+                <a href="">
+                    <span class="material-symbols-outlined">
+                        refresh
+                    </span>
+                    예매 다시하기
+                </a>
+            </div>
+
+            <div id="section_ticketing" style="display: table;">
+                <div style="display: table-row;">
+                    <div id="section_movie" class="section_th bg_gray">영화</div>
+                    <div id="section_theater" class="section_th bg_gray">극장</div>
+                    <div id="section_date" class="section_th bg_gray">날짜</div>
+                </div>
+                <div style="display: table-row;">
+                    <div class="section_td">
+                        <div id="sort_list">
+                            <a href="#">예매율순</a>
+                            <a href="#">가나다순</a>
+                            <a href="#">시청등급순</a>
+                        </div>
+                        <div id="movie_list"></div>
+                    </div>
+
+                    <div class="section_td">
+                        <span id="movie_plz" class="no_select_movie">영화를 선택해주세요.</span>
+                        <div id="city_list" class="dp_none"></div>
+                        <div id="theater_list" class="dp_none"></div>
+                    </div>
+
+                    <div id="date_select" class="section_td">
+                        <span id="theater_plz" class="no_select_theater">영화,극장을 선택해주세요.</span>
+
+                        <div id="calendar" class="my-calendar clearfix dp_none">
+                            <div class="calendar-box">
+                                <div class="ctr-box clearfix">
+                                    <button type="button" title="prev" class="btn-cal prev"></button>
+                                    <span class="cal-month"></span>
+                                    <span class="cal-year"></span>
+                                    <button type="button" title="next" class="btn-cal next"></button>
+                                </div>
+                                <table class="cal-table">
+                                    <thead>
+                                        <tr>
+                                            <th>일</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                            <th>토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="cal-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button id="reservation" class="dp_none" type="button">
+                            좌석선택
+                        </button>
+                    </div>
+                </div>
+                <div style="display: table-row;">
+                    <div class="section_tf dp_none">
+                        <div class="clicked-date">
+                            <div class="cal-day"></div>
+                            <div class="cal-date"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="cover" class="dp_none">
+            <div id="reservationTab" class="dp_none">
+                <div id="reservationExit">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+
+                <div id="reservationNext" class="bg_gray dp_none">
+                    <p>총 <span id="reservationCount"></span>명 | 금액 <span id="reservationPrice"></span>원</p>
+                    <Strong>결제하기</Strong>
+                </div>
+
+                <div class="container">
+
+
+                    <ul class="showcase">
+                        <li>
+                            <div class="seat"></div>
+                            <small>예약가능</small>
+                        </li>
+                        <li>
+                            <div class="seat selected"></div>
+                            <small>선택좌석</small>
+                        </li>
+                        <li>
+                            <div class="seat occupied"></div>
+                            <small>예약불가</small>
+                        </li>
+                    </ul>
+
+                    <div class="movie_container">
+                        <div class="screen">SCREEN</div>
+
+                        <div class="row">
+                            <div class="seat">A1</div>
+                            <div class="seat">A2</div>
+                            <div class="seat">A3</div>
+                            <div class="seat">A4</div>
+                            <div class="seat">A5</div>
+                            <div class="seat">A6</div>
+                            <div class="seat">A7</div>
+                            <div class="seat">A8</div>
+                        </div>
+                        <div class="row">
+                            <div class="seat">B1</div>
+                            <div class="seat">B2</div>
+                            <div class="seat">B3</div>
+                            <div class="seat occupied">B4</div>
+                            <div class="seat occupied">B5</div>
+                            <div class="seat">B6</div>
+                            <div class="seat">B7</div>
+                            <div class="seat">B8</div>
+                        </div>
+                        <div class="row">
+                            <div class="seat">C1</div>
+                            <div class="seat">C2</div>
+                            <div class="seat">C3</div>
+                            <div class="seat">C4</div>
+                            <div class="seat">C5</div>
+                            <div class="seat">C6</div>
+                            <div class="seat occupied">C7</div>
+                            <div class="seat occupied">C8</div>
+                        </div>
+                        <div class="row">
+                            <div class="seat">D1</div>
+                            <div class="seat">D2</div>
+                            <div class="seat">D3</div>
+                            <div class="seat">D4</div>
+                            <div class="seat">D5</div>
+                            <div class="seat">D6</div>
+                            <div class="seat">D7</div>
+                            <div class="seat">D8</div>
+                        </div>
+                        <div class="row">
+                            <div class="seat">E1</div>
+                            <div class="seat">E2</div>
+                            <div class="seat">E3</div>
+                            <div class="seat occupied">E4</div>
+                            <div class="seat occupied">E5</div>
+                            <div class="seat">E6</div>
+                            <div class="seat">E7</div>
+                            <div class="seat">E8</div>
+                        </div>
+                        <div class="row">
+                            <div class="seat">F1</div>
+                            <div class="seat">F2</div>
+                            <div class="seat">F3</div>
+                            <div class="seat">F4</div>
+                            <div class="seat occupied">F5</div>
+                            <div class="seat occupied">F6</div>
+                            <div class="seat occupied">F7</div>
+                            <div class="seat">F8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="./js/movie_list.js"></script>
+                <script src="./js/theater_list.js"></script>
+                <script src="./js/date_select.js"></script>
+                <script src="./js/reservation.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer_ad">
+            <div style="width:980px; margin:0 auto">
+                <a
+                    href="http://ad.cgv.co.kr/click/CGV/CGV_201401/main@Bottom?ads_id=49059&amp;creative_id=70545&amp;click_id=90998&amp;content_series=&amp;event=">
+                    <img src="./img/footer_ad.png" alt="광고">
+                </a>
+            </div>
+        </div>
+
+        <div id="footer_content">
+            <ul id="policy_list">
+                <li>회사소개</li>
+                <li>지속가능경영</li>
+                <li>IR</li>
+                <li>채용정보</li>
+                <li>광고/제휴/출점문의</li>
+                <li>이용약관</li>
+                <li>편성기준</li>
+                <li>개인정보처리방침</li>
+                <li>법적고지</li>
+                <li>이메일주소무단수집거부</li>
+                <li>윤리경영</li>
+                <li>사이버감사실</li>
+            </ul>
+
+            <ul id="company_info">
+                <li>
+                    (주)이젠아카데미
+                </li>
+                <li>
+                    인천광역시 남동구 인주대로 593 엔타스 12층ㆍ대표자 : 고태곤
+                </li>
+                <li>
+                    사업자등록번호 : 265-92-00112ㆍ학원의 명칭 : 이젠아카데미컴퓨터학원
+                </li>
+                <li>
+                    학원설립/운영 등록번호 : 제 3652호
+                </li>
+                <li>
+                    통신판매업신고번호 : 제 2016-안양만안-0419 호ㆍ개인정보보호책임자 : 고필곤(reaver75@ezenac.co.kr)
+                </li>
+                <li>
+                    <strong>T. 032)719-4074</strong>ㆍ
+                    Copyright by EZEN. All rights reserved.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="top_button" class="dp_none"><a href="">↑</a></div>
+</body>
+
+</html>
